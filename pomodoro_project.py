@@ -22,7 +22,7 @@ def reset_timer():
     canvas.itemconfig(timer_text, text='0:00')
     global check_count
 
-    timer_label.config(text='タイマー', fg=GREEN)
+    timer_label.config(text='Timer', fg=GREEN)
     check_count = ''
     check_mark.config(text=check_count)
 
@@ -33,15 +33,15 @@ def start_timer():
     global check_count
     reps += 1
     if reps % 8 == 0:
-        timer_label.config(text="長い休憩", fg=RED)
+        timer_label.config(text="Long Break", fg=RED)
         count_down(1200)
     elif reps % 2 == 0:
-        timer_label.config(text="休憩", fg=PINK)
+        timer_label.config(text="Break", fg=PINK)
         check_count += "✔"
         check_mark.config(text=check_count)
         count_down(300)
     else:
-        timer_label.config(text="仕事中", fg=GREEN)
+        timer_label.config(text="Work", fg=GREEN)
         count_down(1500)
     
     
@@ -82,11 +82,11 @@ timer_text = canvas.create_text(100, 130, text="00:00", fill="white", font=(FONT
 
 
 #'Timer' label
-timer_label = Label(text='タイマー', font=(FONT_NAME, 50))
+timer_label = Label(text='Pomodoro Timer', font=(FONT_NAME, 30))
 timer_label.config(fg=GREEN, bg=YELLOW)
 timer_label.grid(column=1, row=0)
 
-
+#done
 
 
 #Start and reset buttons
